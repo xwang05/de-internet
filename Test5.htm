@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        //随机数
+        var currentNum = Math.floor(Math.random() * 9) + 1;
+        //选中的数字
+        var clickNum = "0";
+        //确定事件
+        btnClick = function (obj) {
+
+            if (currentNum == clickNum) {
+                location.href = "Test2.htm";
+            } else {
+                document.getElementById("lal1").style.display = "";
+            }
+        }
+
+
+        myclick = function (obj) {
+            clickNum = obj.id;
+            return false;
+        }
+
+        //Math.floor(n);
+    </script>
+    <style type="text/css">
+    h1{color:blue;font-family: monospace;}
+.images{border-width: 5px;border-color: blue;}
+body{color:white;}
+    </style>
+</head>
+<body><H1>choose image with truck</h1>
+    <table width="100%">
+        <tr>
+            <td align="center">
+               <span id="span1" style="font-size:x-large"></span>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <label id="lal1" style="display: none">
+                    INCORRECT</label>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <div class="images">
+                    <img src="file/3.jpg" width="300" height="300" border="0" usemap="#Map" />
+                    <map name="Map" id="Map">
+                        <area shape="rect" id="1" coords="0,0,100,100" href="" onclick="return myclick(this);" />
+                         <area shape="rect" id="2" coords="100,0,200,100" href="" onclick="return myclick(this);" />
+
+                         <area shape="rect" id="3" coords="200,0,300,100" href="" onclick="return myclick(this);" />
+                        <area shape="rect" id="4" coords="0,100,100,200" href=""  onclick="return myclick(this);" />
+                         <area shape="rect" id="5" coords="100,100,200,200" href="" onclick="return myclick(this);" />
+                        <area shape="rect" id="6" coords="200,100,300,200" href="" onclick="return myclick(this);" />
+                         <area shape="rect" id="7" coords="0,200,100,300" href=""  onclick="return myclick(this);" />
+                        <area shape="rect" id="8" coords="100,200,200,300" href=""  onclick="return myclick(this);" />
+                        <area shape="rect" id="9" coords="200,200,300,300" href=""  onclick="return myclick(this);" />
+
+                    </map>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <button onclick="btnClick()">
+                    CONFIRM</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    document.getElementById("span1").innerHTML = currentNum;
+
+</script>
